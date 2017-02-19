@@ -6,6 +6,7 @@ Contributors
 * Allen Sarkisyan - Lead engineer
 * Paige Raynes - Product Development
 * Dan Jacinto - Video Asset Quality Analyst
+* Richard Zurad - Some Guy
 
 License
 ==========
@@ -61,8 +62,9 @@ The methods available are get, listen, stopListen, and toTime.
 Usage
 ==========
 Step 1) Declaration - Initial declaration is done with a configuration object.
-> The configuration object takes these properties: id, and frameRate. it also provides a callback method.
-* id defines the video element;
+> The configuration object takes these properties: id, element, and frameRate. it also provides a callback method.
+* id is the element id of the video element. Use either this or the element property to designate a video element.
+* element is a reference to the video element.
 * frameRate defines the frame rate of the video source being played.
 * callback defines a callback function that is called when a frame is captured.
 
@@ -73,6 +75,15 @@ var video = VideoFrame({
 	callback : function(response) {
 		console.log('callback response: ' + response);
 	}
+});
+```
+
+Or you can initiate VideoFrame with a reference to the video element:
+
+```javascript
+var video = VideoFrame({
+    element: document.querySelector('video.my-video'),
+    frameFrame: FrameRates.film
 });
 ```
 
@@ -93,3 +104,16 @@ Step 2) Usage - Retrieval of the current frame is done by calling the get method
 * video.seekForward(frames) - Seeks forward the amount of frames declared by the frames parameter. Defaults to 1 frame.
 * video.seekBackward(frames) - Seeks backward the amount of frames declared by the frames parameter. Defaults to 1 frame.
 * video.seekTo(config) - Seeks to a certain SMPTE time code, standard time code, frame, second, or millisecond in the video. config example: { SMPTE: '00:01:12:22' }, { time: '00:01:12' },  { frame: 1750 }, { seconds: 72 }, { milliseconds: 72916 }
+
+Build
+==========
+
+You can still include src/VideoFrame.js as a script as you could before, but starting with version 0.2.3, you can also build a version that's wrapped in a UMD module using Webpack. 
+
+```
+# requires npm 3
+npm install
+npm run build
+```
+
+There will now be two new files in the project root directory: VideoFrame.js, and VideoFrame.min.js, which are the UMD wrapped versions of src/VideoFrame.js, with the latter file being minified using uglify-js.

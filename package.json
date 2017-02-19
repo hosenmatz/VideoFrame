@@ -1,0 +1,30 @@
+{
+  "name": "VideoFrame",
+  "version": "0.2.3",
+  "description": "SMPTE Time Code capturing and Frame Seeking API",
+  "main": "VideoFrame.js",
+  "src": "VideoFrame.js",
+  "contributors": [
+    {
+      "name": "Allen Sarkisyan"
+    },
+    {
+      "name": "Paige Raynes"
+    },
+    {
+      "name": "Dan Jacinto"
+    }
+  ],
+  "scripts": {
+    "build": "./node_modules/.bin/webpack --display-modules; ./node_modules/.bin/uglifyjs --compress --mangle --output VideoFrame.min.js --comments -- VideoFrame.js"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "dist/**/**"
+  ],
+  "devDependencies": {
+    "uglify-js": "^2.7.5",
+    "webpack": "2.2.0-rc.3"
+  }
+}
