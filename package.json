@@ -3,7 +3,7 @@
   "version": "0.2.3",
   "description": "SMPTE Time Code capturing and Frame Seeking API",
   "main": "VideoFrame.js",
-  "src": "VideoFrame.js",
+  "license": "MIT",
   "contributors": [
     {
       "name": "Allen Sarkisyan"
@@ -13,6 +13,9 @@
     },
     {
       "name": "Dan Jacinto"
+    }
+    {
+      "name": "Richard Zurad"
     }
   ],
   "scripts": {
