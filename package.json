@@ -21,10 +21,12 @@
   "files": [
     "package.json",
     "README.md",
-    "dist/**/**"
+    "src/VideoFrame.js",
+    "VideoFrame.js",
+    "VideoFrame.min.js"
   ],
   "devDependencies": {
-    "uglify-js": "^2.7.5",
+    "uglify-js": "2.7.5",
     "webpack": "2.2.0-rc.3"
   }
 }
